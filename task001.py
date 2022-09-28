@@ -1,3 +1,4 @@
+7
 # задача 1. Напишите программу, которая принимает на вход цифру,
 #  обозначающую день недели,
 # и проверяет, является ли этот день выходным.
@@ -8,7 +9,7 @@ def input_num(str_input):
     while not ch_num:
         try:
             num_input = int(input(str_input))
-            ch_num = True7
+            ch_num = True
         except:
             print('Некорректный ввод, введите число')
     return num_input
