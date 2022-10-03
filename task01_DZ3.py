@@ -19,4 +19,4 @@ def sum_odd_pos(my_list):
 
 my_list = get_random_list(1, 20 , 6)
 print(f'Задан список: {my_list}')
-print('Сумма элементов на нечетных позициях: ', sum_odd_pos(my_list))  
+print('Сумма элементов на нечетных позициях: ', sum_odd_pos(my_list)) 
