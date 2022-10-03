@@ -39,3 +39,9 @@ def sum_digits(number):
         number//=10
     
     return sum_digits  
+
+    
+number_input = check_input('Введите число: ')
+print(f'Остаток от деления на 1 = {number_input%1}')
+
+print(f'вариант: {sum_digits(number_input)}')
