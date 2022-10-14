@@ -1,0 +1,62 @@
+# Урок 6. Ускоренная обработка данных: lambda, filter, map, zip, enumerate, list comprehension. Продолжение
+# Формат: Объясняет преподаватель
+# Задача: предложить улучшения кода для уже решённых задач:
+# С помощью использования **лямбд, filter, map, zip, enumerate, list comprehension
+# В этом случае можно пропустить совсем тривиальные (т.е. задачу 1 или 2 тут точно решать не имеет смысла) - исходите из уровня группы и студента.
+
+
+# Задача. Найдите сумму чисел. Использую lambda
+
+sum = lambda a,b: a+b
+x = int(input('x= '))
+y = int(input('y= '))
+print(f'{x} + {y} = {sum(x,y)}')
+
+# Использую map
+
+num = input('Введите вещественное число: ')
+num = float(num)
+num = abs(num)
+summ = sum(map(int, str(num).replace('.', '')))
+print('Сумма цифр числа равна =', summ)
+
+# задача 3. Напишите программу, удаляющую из текста все слова, содержащие "абв". Используем filter
+
+li_txt = input('Введите текст:').split()
+li_txt = list(filter((lambda el : "абв" not in el ),li_txt))
+new_text = " ".join(li_txt)
+print(new_text)
+
+# Задача. Задайте список из n чисел последовательности (1+1/n)^n и выведите на экран их сумму. Через lst
+
+
+is_OK = True
+while is_OK:
+    try:
+        n = input('Введите число N: ')
+        n = float(n)
+        n = int(n)
+        is_OK = False
+    except ValueError:
+        print('Вводить надо число')
+lst = []
+
+lst = [round((1+1/i)**i) for i in range(1,n+1)]
+print(f'Полученная сумма последовательности {lst} =', sum(lst))
+
+# Задача. Новый набор данных. Использую zip   
+
+users = [u, b, a]
+ids = [1, 2, 3]
+salary = list([x, y, z])
+data = zip(users,ids,salary) # либо используем enumerate:  data = list(enumerate(users)) ВЫВЕДЕТ [(0,'u'), (1,'b'),(2,'a')]
+print(data)
+
+# Задача. Составить кортежи, где в качестве 1-й координаты число, а в качестве 2-й координаты квадрат этого числа. Использую list 
+
+def f(x):
+    return x**2
+list=[(i,f(i) for i in range(2,10,2]
+print(list)
+
+# 
