@@ -1,3 +1,5 @@
+# Простой Telegram-бот на языке Python, использующий библиотеку telebot
+
 import telebot, datetime, time, math, re
 from telebot import types
 
